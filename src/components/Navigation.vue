@@ -5,7 +5,7 @@
         :key="i"
       >
       <router-link v-if="val === 'users'" to="/" v-on:click="$store.state.filterValue = val">{{val}}</router-link>
-      <router-link v-else :to="val" v-on:click="$store.state.filterValue = val">{{ val }}</router-link>
+      <router-link v-else :to="'/'+val" v-on:click="$store.state.filterValue = val">{{ val }}</router-link>
     </div>
   </nav>
 </template>
