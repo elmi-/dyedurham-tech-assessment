@@ -4,8 +4,8 @@
         v-for="(val, i) in navigation"
         :key="i"
       >
-      <router-link v-if="val === 'users'" to="/">{{val}}</router-link>
-      <router-link v-else :to="val">{{ val }}</router-link>
+      <router-link v-if="val === 'users'" to="/" :key="$route.fullPath">{{val}}</router-link>
+      <router-link v-else :to="val" :key="$route.fullPath">{{ val }}</router-link>
     </div>
   </nav>
 </template>
@@ -28,6 +28,6 @@ export default {
     return {
       navigation: Object.keys(store).filter(key => ["users", "transactions"].includes(key))
     }
-  }
+  },
 }
 </script>
