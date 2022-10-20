@@ -1,11 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Navigation />
   <router-view/>
 </template>
+<script>
+  import Navigation from "@/components/Navigation"
 
+  export default {
+    components: {
+      Navigation
+    }
+  }
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

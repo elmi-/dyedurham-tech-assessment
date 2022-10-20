@@ -62,4 +62,4 @@ export default  {
     user:1,
     total:80
   }]
-},
+}
