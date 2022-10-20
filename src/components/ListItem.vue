@@ -5,7 +5,7 @@
     :data="d"
   >
     <td>
-      <router-link :to="{ name: 'details', params: { id: d.id } }">{{ d.name }}</router-link>
+      <router-link :to="{ name: 'details', params: { id: d.id } }" v-on:click="$store.state.detailsValue = d.id">{{ d.name }}</router-link>
     </td>
     <td>
       {{ d.email }}

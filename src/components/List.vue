@@ -7,18 +7,18 @@
   </table>
 </template>
 <script>
-  import ListItem from "@/components/ListItem";
-  import store from "@/api/data"
+  import ListItem from "@/components/ListItem"
+  import { mapGetters } from "vuex"
 
   export default {
     name: "List",
     components: {
       ListItem
     }, 
-    data() {
-      return {
-        data: store,
-      }
-    }
+    computed: {
+      ...mapGetters([
+        'data'
+    ])
   }
+}
 </script>

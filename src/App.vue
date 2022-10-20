@@ -1,6 +1,5 @@
 <template>
   <h3>context: {{ $store.state.filterValue }}</h3>
-  <h3>data: {{ $store.state.data }}</h3>
   <Navigation />
   <router-view/>
 </template>

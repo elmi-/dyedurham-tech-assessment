@@ -4,7 +4,8 @@ import data from "@/api/data"
 export default createStore({
   state: {
     filterValue: "users",
-    data
+    data,
+    detailsValue: null
   },
   mutations: {
 
@@ -13,6 +14,11 @@ export default createStore({
 
   },
   getters: {
-
+      data: state => {
+        return state.data
+      },
+      getDataByID: state => (id, filter) => {
+        return state.data[filter].filter(d => d.id === id);
+      }
   }
 })
