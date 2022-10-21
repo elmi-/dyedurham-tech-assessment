@@ -27,8 +27,7 @@
             :key="index"
           >
             {{ firm }}:
-          </span>
-          {{ v }}
+          </span>{{ v }}
           <router-link 
             :to="{ name: 'details', params: { id: value.id } }" 
             v-on:click="$store.state.detailsValue = value.id"

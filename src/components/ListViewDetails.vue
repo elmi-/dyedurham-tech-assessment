@@ -8,7 +8,14 @@
     v-for="(v, k, i) in value"
     :key="i"
     >
-      <strong>{{ k }}</strong>: <span v-show="k === 'total'">$</span>{{ v }}
+      <strong>{{ k }}</strong>: <span v-show="k === 'total'">$</span>
+      <span 
+        v-show="k =='firm'"
+        v-for="(firm, key, index) in getUserFirm(v)"
+        :key="index"
+      >
+        {{ firm }}:
+      </span>{{ v }}
   </article>
   </section>
 </template>
