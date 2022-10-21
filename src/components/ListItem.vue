@@ -16,9 +16,18 @@
               :key="indexColumn"
               class="text-left"
             >
-            <router-link :to="{ name: 'details', params: { id: valueRow.id } }" v-on:click="$store.state.detailsValue = valueRow[Object.keys(data.data[keyRow])[keyColumn]]">
-              <span v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'total'">$</span>{{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}</router-link>
+
+              <span v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'total'">$</span>{{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}
+              <router-link 
+                :to="{ name: 'details', params: { id: valueRow.id } }" 
+                v-on:click="$store.state.detailsValue = valueRow[Object.keys(data.data[keyRow])[keyColumn]]"
+                v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'name'"
+                class="details-icon"
+              >
+              <font-awesome-icon icon="fa-sharp fa-solid fa-circle-info" />
+            </router-link>
             </td>
+    
         </tr>
     </tbody>
 </template>
