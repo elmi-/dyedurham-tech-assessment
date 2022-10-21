@@ -1,20 +1,16 @@
 <template>
-  <nav id="nav">
-      <div 
+  <ul class="nav nav-tabs" id="nav">
+      <li 
+        class="nav-item"
         v-for="(val, i) in navigation"
         :key="i"
       >
-      <router-link v-if="val === 'users'" to="/" v-on:click="$store.state.filterValue = val">{{val}}</router-link>
-      <router-link v-else :to="'/'+val" v-on:click="$store.state.filterValue = val">{{ val }}</router-link>
-    </div>
-  </nav>
+      <router-link v-if="val === 'users'" to="/" v-on:click="$store.state.filterValue = val" class="nav-link" :class="activeClass(val)">{{val}}</router-link>
+      <router-link v-else :to="'/'+val" v-on:click="$store.state.filterValue = val" class="nav-link" :class="activeClass(val)">{{ val }}</router-link>
+    </li>
+  </ul>
 </template>
 <style scoped>
-  #nav {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-  }
   #nav div {
     padding: 0 10px
   }
@@ -29,5 +25,14 @@ export default {
       navigation: Object.keys(store).filter(key => ["users", "transactions"].includes(key))
     }
   },
+  methods: {
+    activeClass: function (...names) {
+      for (let name of names) {
+        if (name == this.$route.name) {
+          return 'active';
+        }
+      }
+    } 
+  }
 }
 </script>

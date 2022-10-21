@@ -15,7 +15,10 @@ export default createStore({
   },
   getters: {
       data: state => {
-        return state.data
+        return { data: state.data, keys: Object.keys(state.data) }
+      },
+      filteredData: state => (filter) => {
+        return { data: state.data[filter], keys: Object.keys(state.data[filter]) }
       },
       getDataByID: state => (id, filter) => {
         return state.data[filter].filter(d => d.id === id);

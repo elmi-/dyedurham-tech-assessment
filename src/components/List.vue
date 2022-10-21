@@ -1,9 +1,6 @@
 <template v-cloack>
-  <table>
-    <thead>
-      <th>ID</th>
-    </thead>
-    <ListItem :data="data" />
+  <table class="table table-striped table-hover">
+    <ListItem :data="filteredData('users')" :keys="filteredData('users')" />
   </table>
 </template>
 <script>
@@ -17,7 +14,8 @@
     }, 
     computed: {
       ...mapGetters([
-        'data'
+        'data',
+        'filteredData'
     ])
   }
 }

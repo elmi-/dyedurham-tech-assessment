@@ -1,5 +1,4 @@
 <template>
-  <h3>context: {{ $store.state.filterValue }}</h3>
   <Navigation />
   <router-view/>
 </template>

@@ -12,7 +12,8 @@
   export default {
     name: "ListViewDetails",
     props: {
-      user: Object
+      user: Object,
+      keys: Object
     },
     computed: {
       ...mapGetters(["getDataByID"])
