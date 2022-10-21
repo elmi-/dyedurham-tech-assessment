@@ -1,6 +1,6 @@
 <template v-cloack>
   <table class="table table-striped table-hover">
-    <ListItem :data="filteredData('users')" :keys="filteredData('users')" />
+    <ListItem :data="filteredData($store.state.filterValue)" :keys="filteredData($store.state.filterValue)" />
   </table>
 </template>
 <script>

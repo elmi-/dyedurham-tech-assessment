@@ -15,7 +15,7 @@
               v-for="(valueColumn, keyColumn, indexColumn) in Object.keys(data.data)" 
               :key="indexColumn"
             >
-              {{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}
+            <router-link :to="{ name: 'details', params: { id: valueRow.id } }">{{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}</router-link>
             </td>
         </tr>
     </tbody>
