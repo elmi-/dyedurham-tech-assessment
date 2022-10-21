@@ -1,5 +1,7 @@
 # dyedurham-tech-assessment
 
+![screenshot](https://github.com/elmi-/dyedurham-tech-assessment/blob/main/docs/screenshot.PNG)
+
 ## Purpose
 Purpose of this assignment is to assess the thinking process and the approach of the developer to develop a solution.
 
