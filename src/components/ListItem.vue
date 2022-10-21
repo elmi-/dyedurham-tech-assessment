@@ -20,11 +20,19 @@
             :key="i"
             class="text-left"
           >
-          <span v-show="k === 'total'">$</span>{{ v }}
+          <span v-show="k === 'total'">$</span>
+          <span 
+            v-show="k =='firm'"
+            v-for="(firm, key, index) in getUserFirm(v)"
+            :key="index"
+          >
+            {{ firm }}:
+          </span>
+          {{ v }}
           <router-link 
             :to="{ name: 'details', params: { id: value.id } }" 
             v-on:click="$store.state.detailsValue = value.id"
-            v-show="k == 'name' || k == 'product'"
+            v-show="k == 'name' || k == 'product'" 
             class="details-icon"
           >
             <font-awesome-icon icon="fa-sharp fa-solid fa-circle-info" />
@@ -34,11 +42,17 @@
     </tbody>
 </template>
 <script>
+  import { mapGetters } from "vuex"
   export default {
     name: "ListItem",
     props: {
       data: Object,
       keys: Object
     },
+    computed: {
+      ...mapGetters([
+        'getUserFirm'
+    ])
+  },
   } 
 </script>

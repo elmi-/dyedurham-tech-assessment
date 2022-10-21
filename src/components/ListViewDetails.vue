@@ -20,7 +20,8 @@
       ...mapGetters([
         'data',
         'filteredData',
-        'getDataByID'
+        'getDataByID',
+        'getUserFirm'
     ])
   },
   props: {
