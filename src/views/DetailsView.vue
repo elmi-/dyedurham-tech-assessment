@@ -1,6 +1,6 @@
 <template>
   <h1>Details</h1>
-  {{ getDataByID(2, "users") }}
+  {{ getDataByID($store.state.detailsValue, $store.state.filterValue) }}
 </template>
 <script>
   import { mapGetters } from "vuex"

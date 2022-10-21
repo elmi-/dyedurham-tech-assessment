@@ -14,8 +14,9 @@
             <td 
               v-for="(valueColumn, keyColumn, indexColumn) in Object.keys(data.data)" 
               :key="indexColumn"
+              class="text-left"
             >
-            <router-link :to="{ name: 'details', params: { id: valueRow.id } }">
+            <router-link :to="{ name: 'details', params: { id: valueRow.id } }" v-on:click="$store.state.detailsValue = valueRow[Object.keys(data.data[keyRow])[keyColumn]]">
               <span v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'total'">$</span>{{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}</router-link>
             </td>
         </tr>
