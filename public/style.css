@@ -1,4 +1,13 @@
 #app {
   margin: 4rem auto;
-  width: 60%
+  width: 60%;
+  text-align: inherit;
+}
+
+td {
+  padding: 2rem
+}
+
+th {
+  padding: 0.5rem
 }
