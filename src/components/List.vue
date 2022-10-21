@@ -1,5 +1,5 @@
 <template v-cloack>
-  <table class="table table-striped table-hover">
+  <table class="table table-striped table-hover table-responsive-sm">
     <ListItem :data="filteredData($store.state.filterValue)" :keys="filteredData($store.state.filterValue)" />
   </table>
 </template>

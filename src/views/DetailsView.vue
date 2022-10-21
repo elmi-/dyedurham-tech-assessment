@@ -1,5 +1,5 @@
 <template>
-  <h4>Details</h4>
+  <h4>{{ $store.state.filterValue }} details</h4>
   <section
     v-for="(value, key, index) in getDataByID($store.state.detailsValue, $store.state.filterValue)"
     :key="index"

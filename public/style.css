@@ -1,6 +1,6 @@
 #app {
   margin: 4rem auto;
-  width: 60%;
+  /* width: 60%; */
   text-align: inherit;
 }
 
@@ -24,4 +24,11 @@ th {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f05a";
+}
+
+@media only screen and (max-width: 700px) {
+  #app {
+    margin: 1rem;
+    width: auto
+  }
 }
