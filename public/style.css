@@ -1,7 +1,19 @@
 #app {
   margin: 4rem auto;
-  /* width: 60%; */
+  width: 60%;
   text-align: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0 1.5rem;
 }
 
 td {
