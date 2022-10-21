@@ -1,4 +1,5 @@
-<template>
+<!-- TODO: delete -->
+<!-- <template>
   <h1>Details</h1>
   {{ getDataByID(2, "users") }}
 </template>
@@ -17,4 +18,4 @@
       data: Object
     },
   } 
-</script>
+</script> -->

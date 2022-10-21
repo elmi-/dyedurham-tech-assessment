@@ -1,11 +1,22 @@
 <template>
-  <h1>Details</h1>
-  {{ getDataByID($store.state.detailsValue, $store.state.filterValue) }}
+  <h4>Details</h4>
+  <!-- {{ getDataByID($store.state.detailsValue, $store.state.filterValue) }} -->
+  <section
+    v-for="(value, key, index) in getDataByID($store.state.detailsValue, $store.state.filterValue)"
+    :key="index"
+  >
+    <article
+    v-for="(v, k, i) in value"
+    :key="i"
+    >
+      <strong>{{ k }}</strong>: {{ v }}
+  </article>
+  </section>
 </template>
 <script>
   import { mapGetters } from "vuex"
   export default {
-    name: "ListViewDetails",
+    name: "DetailsView",
     computed: {
       ...mapGetters([
         'data',

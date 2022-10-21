@@ -21,7 +21,7 @@
               <router-link 
                 :to="{ name: 'details', params: { id: valueRow.id } }" 
                 v-on:click="$store.state.detailsValue = valueRow[Object.keys(data.data[keyRow])[keyColumn]]"
-                v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'name'"
+                v-show="Object.keys(data.data[keyRow])[keyColumn + 1] == 'name' || Object.keys(data.data[keyRow])[keyColumn + 1] == 'product'"
                 class="details-icon"
               >
               <font-awesome-icon icon="fa-sharp fa-solid fa-circle-info" />
