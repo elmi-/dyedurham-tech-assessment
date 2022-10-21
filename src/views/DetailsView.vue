@@ -1,6 +1,5 @@
 <template>
   <h4>Details</h4>
-  <!-- {{ getDataByID($store.state.detailsValue, $store.state.filterValue) }} -->
   <section
     v-for="(value, key, index) in getDataByID($store.state.detailsValue, $store.state.filterValue)"
     :key="index"
@@ -9,7 +8,7 @@
     v-for="(v, k, i) in value"
     :key="i"
     >
-      <strong>{{ k }}</strong>: {{ v }}
+      <strong>{{ k }}</strong>: <span v-show="k === 'total'">$</span>{{ v }}
   </article>
   </section>
 </template>

@@ -1,33 +1,35 @@
 <template>
-  <thead>
-    <th 
-      scope="col"
-      v-for="(value, key, index) in Object.keys(data.data)"
+    <template
+      v-for="(value, key, index) in data.data.slice(0, 1)"
       :key="index"
-      :data="value"
     >
-      {{ Object.keys(data.data[key])[key + 1] }}
+    <th
+    v-for="(v, k, i) in value"
+      :key="i"
+    >
+      {{ k }}
     </th>
-  </thead>
+    </template>
     <tbody>
-        <tr v-for="(valueRow, keyRow, indexRow) in data.data" :key="indexRow">
-            <td 
-              v-for="(valueColumn, keyColumn, indexColumn) in Object.keys(data.data)" 
-              :key="indexColumn"
-              class="text-left"
-            >
-
-              <span v-show="Object.keys(data.data[keyRow])[keyColumn + 1] === 'total'">$</span>{{ valueRow[Object.keys(data.data[keyRow])[keyColumn + 1]] }}
-              <router-link 
-                :to="{ name: 'details', params: { id: valueRow.id } }" 
-                v-on:click="$store.state.detailsValue = valueRow[Object.keys(data.data[keyRow])[keyColumn]]"
-                v-show="Object.keys(data.data[keyRow])[keyColumn + 1] == 'name' || Object.keys(data.data[keyRow])[keyColumn + 1] == 'product'"
-                class="details-icon"
-              >
-              <font-awesome-icon icon="fa-sharp fa-solid fa-circle-info" />
-            </router-link>
-            </td>
-    
+        <tr 
+          v-for="(value, key, index) in data.data" 
+          :key="index"
+        >
+          <td 
+            v-for="(v, k, i) in value" 
+            :key="i"
+            class="text-left"
+          >
+          <span v-show="k === 'total'">$</span>{{ v }}
+          <router-link 
+            :to="{ name: 'details', params: { id: value.id } }" 
+            v-on:click="$store.state.detailsValue = value.id"
+            v-show="k == 'name' || k == 'product'"
+            class="details-icon"
+          >
+            <font-awesome-icon icon="fa-sharp fa-solid fa-circle-info" />
+          </router-link>
+          </td>
         </tr>
     </tbody>
 </template>
